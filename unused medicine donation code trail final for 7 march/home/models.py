@@ -48,7 +48,10 @@ class medicine(models.Model):
 
     def __str__(self):
         return self.medicinename
-
+class sushant(models.Model):
+    tablets = models.CharField(max_length=200, null=True)
+    
+    
 class uploadmedicine(models.Model):
     tmedicine = models.CharField(max_length=80)
     mname = models.CharField(max_length=89)
