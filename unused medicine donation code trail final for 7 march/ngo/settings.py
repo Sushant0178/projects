@@ -59,8 +59,16 @@ DATABASES = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+# Directory for collecting static files after running collectstatic
+STATIC_URL = '/static/'
+
+# Directories where Django will search for additional static files
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+# Directory where static files will be collected when 'collectstatic' is run
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build')
 
 AUTH_PASSWORD_VALIDATORS = [
     {
