@@ -6,9 +6,7 @@ SECRET_KEY = 'u_ef61bu5c8_%pmh5j@a)*8u4yil4vgu8z=cyn%+mb#5#6zdq0'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app' '.now.sh']
-
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
 
 INSTALLED_APPS = [
     'home.apps.HomeConfig',  # Assuming this is your custom app
@@ -59,41 +57,15 @@ DATABASES = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Directory for collecting static files after running collectstatic
+# STATIC settings
 STATIC_URL = '/static/'
 
-# Directories where Django will search for additional static files
+# Directory where Django will search for additional static files
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'static'),  # Assuming your static files are in the 'static' folder
 ]
 
 # Directory where static files will be collected when 'collectstatic' is run
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build')
+STATIC_ROOT = os.path.join(BASE_DIR, 'public')  # You can specify this as 'public' or 'staticfiles_build'
 
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
-]
-
-LANGUAGE_CODE = 'en-in'
-TIME_ZONE = 'Asia/Kolkata'
-USE_I18N = True
-USE_L10N = True
-USE_TZ = False
-DATE_FORMAT = 'Y-m-d'
-
-STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
-]
+# You can change it to 'staticfiles_build' or 'public' as per your project structure
