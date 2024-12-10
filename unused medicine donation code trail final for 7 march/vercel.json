@@ -2,15 +2,16 @@
     "version": 2,
     "builds": [
       {
-        "src": "ngo/wsgi.py",
+        "src": "manage.py",
         "use": "@vercel/python",
         "config": {
           "maxLambdaSize": "15mb",
-          "runtime": "python3.9"
+          "runtime": "python3.9",
+          "installCommand": "pip install -r requirements.txt"
         }
       },
       {
-        "src": "build_files.sh",
+        "src": "static/**/*",
         "use": "@vercel/static-build",
         "config": {
           "distDir": "staticfiles_build"
@@ -24,7 +25,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "poll/wsgi.py"
+        "dest": "ngo/wsgi.py"
       }
     ]
   }
