@@ -13,13 +13,13 @@ root.title('textTospeech')
 count=1
 def slider():
     global count
-    # if (count==1):
-        # slider_lebel.configure(image=p1)
-    # elif(count==2):
-    #     slider_lebel.configure(image=p2)
-    # else:
-    #     slider_lebel.configure(image=p3)
-    #     count=0
+    # # if (count==1):
+    #     # slider_lebel.configure(image=p1)
+    # # elif(count==2):
+    # #     slider_lebel.configure(image=p2)
+    # # else:
+    # #     slider_lebel.configure(image=p3)
+    # #     count=0
     count+=1
     # slider_lebel.after(1000,slider)
 

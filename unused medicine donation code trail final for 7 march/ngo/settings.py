@@ -6,7 +6,9 @@ SECRET_KEY = 'u_ef61bu5c8_%pmh5j@a)*8u4yil4vgu8z=cyn%+mb#5#6zdq0'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app' '.now.sh']
+
+# ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'home.apps.HomeConfig',  # Assuming this is your custom app
@@ -56,6 +58,9 @@ DATABASES = {
 }
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 AUTH_PASSWORD_VALIDATORS = [
     {
